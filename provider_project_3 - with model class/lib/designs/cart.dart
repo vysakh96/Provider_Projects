@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+
 import 'package:google_fonts/google_fonts.dart';
+
 import 'package:provider/provider.dart';
+
 import 'package:provider_task_4/provider/provider_class.dart';
 
 class Cart extends StatelessWidget {
@@ -15,9 +18,11 @@ class Cart extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title:Text('WISHLIST',style: TextStyle(fontWeight: FontWeight.w900),),
-
-    ),
+        title: Text(
+          'WISHLIST',
+          style: TextStyle(fontWeight: FontWeight.w900),
+        ),
+      ),
       body: ListView.builder(
           itemCount: icnStore.length,
           itemBuilder: (context, index) {
@@ -38,17 +43,20 @@ class Cart extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
                           color: Colors.black)),
-                  trailing: GestureDetector(onTap: (){
-                    object.cartItems(icnStore[index],colorStore[index],nameStore[index]);
-                  },
-                    child:object.icn_change(nameStore[index])?
-                    Icon(
-                      Icons.favorite,
-                      color: Colors.red,
-                    )
+                  trailing: GestureDetector(
+                    onTap: () {
+                      object.cartItems(
+                          icnStore[index], colorStore[index], nameStore[index]);
+                    },
+                    child: object.icn_change(nameStore[index])
+                        ? Icon(
+                            Icons.favorite,
+                            color: Colors.red,
+                          )
                         : Icon(
-                      Icons.favorite_border,color: Colors.blue,
-                    ),
+                            Icons.favorite_border,
+                            color: Colors.blue,
+                          ),
                   ),
                 ),
               ),

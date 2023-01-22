@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+
 import 'package:google_fonts/google_fonts.dart';
+
 import 'package:provider/provider.dart';
+
 import 'package:provider_task_4/provider/provider_class.dart';
 
 import '../model_class.dart';
+
 import 'cart.dart';
 
 class Home extends StatelessWidget {
@@ -46,14 +50,19 @@ class Home extends StatelessWidget {
       Item(icn: Icons.chair, itemColor: Colors.yellow, itemName: 'Movie Tickes')
     ];
     return Scaffold(
-      floatingActionButton: FloatingActionButton.extended(onPressed: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>const Cart()));
-      },
-      label: Text('Cart'),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => const Cart()));
+        },
+        label: Text('Cart'),
       ),
       appBar: AppBar(
         centerTitle: true,
-        title: Text('HOME',style: TextStyle(fontWeight: FontWeight.w900),),
+        title: Text(
+          'HOME',
+          style: TextStyle(fontWeight: FontWeight.w900),
+        ),
       ),
       body: ListView.builder(
           itemCount: items.length,
@@ -75,17 +84,20 @@ class Home extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
                           color: Colors.black)),
-                  trailing: GestureDetector(onTap: (){
-                    object.cartItems(items[index].icn,items[index].itemColor,items[index].itemName);
-                  },
-                    child:object.icn_change(items[index].itemName)?
-                    Icon(
-                      Icons.favorite,
-                      color: Colors.red,
-                    )
+                  trailing: GestureDetector(
+                    onTap: () {
+                      object.cartItems(items[index].icn, items[index].itemColor,
+                          items[index].itemName);
+                    },
+                    child: object.icn_change(items[index].itemName)
+                        ? Icon(
+                            Icons.favorite,
+                            color: Colors.red,
+                          )
                         : Icon(
-                      Icons.favorite_border,color: Colors.blue,
-                    ),
+                            Icons.favorite_border,
+                            color: Colors.blue,
+                          ),
                   ),
                 ),
               ),

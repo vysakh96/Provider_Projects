@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+
 import 'package:provider/provider.dart';
 
 import '../provider/provider_page.dart';
+
 import 'cart_page.dart';
 
 class ItemList extends StatelessWidget {
@@ -71,7 +73,7 @@ class ItemList extends StatelessWidget {
                 ),
                 title: Text(
                   name[index],
-                  style: TextStyle(fontSize: 20, color: Colors.yellowAccent),
+                  style: TextStyle(fontSize: 21, color: Colors.yellowAccent),
                 ),
                 trailing: IconButton(
                   onPressed: () {
