@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+
 import 'package:provider/provider.dart';
+
 import '../provider/provider_class.dart';
+
 import 'cart_page.dart';
 
 class GroceriesList extends StatelessWidget {
